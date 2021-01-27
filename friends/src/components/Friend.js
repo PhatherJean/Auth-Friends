@@ -7,6 +7,7 @@ export default function Friend(props) {
       <h4> Name: {friend.name} </h4>
       <p>
         E-mail: {friend.email}
+        <br />
         Age: {friend.age}
       </p>
     </div>

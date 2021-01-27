@@ -7,7 +7,7 @@ import Loader from "react-loader-spinner";
 class FriendsList extends React.Component {
   state = {
     friends: [],
-    isLoading: true,
+    isLoading: false,
   };
 
   componentDidMount() {
@@ -29,7 +29,6 @@ class FriendsList extends React.Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <div>
         <FriendForm />
