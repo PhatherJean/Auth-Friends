@@ -29,6 +29,7 @@ class Login extends React.Component {
       .post("http://localhost:5000/api/login", this.state.credentials)
       .then((res) => {
         localStorage.setItem("token", JSON.stringify(res.data.payload));
+        this.props.history.push("/friends");
       })
       .catch((err) =>
         this.setState({
@@ -44,13 +45,19 @@ class Login extends React.Component {
         <form onSubmit={this.login}>
           <label htmlFor="username">
             Username:
-            <input id="username" name="username" onChange={this.handleChange} />
+            <input
+              id="username"
+              value={this.state.credentials.username}
+              name="username"
+              onChange={this.handleChange}
+            />
           </label>
           <label htmlFor="password">
             Password:
             <input
               id="password"
               type="password"
+              value={this.state.credentials.password}
               name="password"
               onChange={this.handleChange}
             />
